@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cue Privacy Policy — no tracking, no third-party servers, your data stays in Apple's ecosystem.">
+  <title>Cue | Privacy Policy</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script>
+    (function() {
+      var root = document.documentElement;
+      var saved = localStorage.getItem("cue-theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body class="docs-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="../index.html" aria-label="Cue home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="6" width="10" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="6.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="10" width="12" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="10.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="14" width="8" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="14.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <path d="M16.5 12.5 C16.5 14.9 14.5 16.9 12.1 16.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="16.5" cy="11" r="1.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>Cue</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#features" data-i18n="navFeatures">Features</a>
+        <a href="../index.html#devices" data-i18n="navDevices">Devices</a>
+        <a href="../index.html#privacy" data-i18n="navPrivacy">Privacy</a>
+        <a href="Support.html" data-i18n="navSupport">Support</a>
+      </div>
+      <div class="nav-actions">
+        <button class="language-toggle" type="button" data-lang-toggle data-i18n="langLabel">ภาษาไทย</button>
+        <button class="icon-button" type="button" data-theme-toggle data-i18n-aria="themeLabel" aria-label="Toggle theme"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="docs-shell">
+    <span class="doc-meta" data-i18n="privacyDocUpdated">Last updated: August 2026</span>
+    <h1 data-i18n="privacyDocTitle">Cue Privacy Policy</h1>
+    <p class="docs-lead" data-i18n="privacyDocLead">Cue is built with privacy as a core value. The app collects no personal data, uses no tracking, and has no third-party analytics or advertising SDKs.</p>
+
+    <div class="docs-grid">
+
+      <section class="support-card" aria-labelledby="collect-title">
+        <h2 id="collect-title" data-i18n="privacyCollectTitle">Information we handle</h2>
+        <p data-i18n="privacyCollectBody">Cue stores the lists, items, and location triggers you create. This data lives entirely on your device in SwiftData and, if you choose, in your private iCloud account via CloudKit. Cue does not transmit any of this data to its own servers.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="storage-title">
+        <h2 id="storage-title" data-i18n="privacyStorageTitle">Sync and storage</h2>
+        <p data-i18n="privacyStorageBody">iCloud sync uses Apple's CloudKit private database, linked to your personal Apple ID. Only you can access this data. Apple Watch sync uses WatchConnectivity — data stays within your device pair.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="noads-title">
+        <h2 id="noads-title" data-i18n="privacyNoAdsTitle">No advertising or analytics</h2>
+        <p data-i18n="privacyNoAdsBody">Cue contains no advertising SDK, no analytics SDK, and performs no user tracking. The app's PrivacyInfo.xcprivacy manifest records zero collected data types and zero tracking domains.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="location-title">
+        <h2 id="location-title" data-i18n="privacyLocationTitle">Location data</h2>
+        <p data-i18n="privacyLocationBody">Cue requests "Always On" location permission solely to monitor geofences you set. Location data is used on-device to determine which Context to surface. It is never uploaded, stored remotely, or shared.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="controls-title">
+        <h2 id="controls-title" data-i18n="privacyControlsTitle">Your controls</h2>
+        <p data-i18n="privacyControlsBody">You can revoke location or microphone permissions at any time in iOS Settings. You can erase all Cue data from Settings → Data Management → Erase All Data. Deleting the app removes all local data.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="privacy-contact-title">
+        <h2 id="privacy-contact-title" data-i18n="privacyContactTitle">Contact</h2>
+        <p data-i18n="privacyContactBody">Questions about privacy? Email us at the address listed on the App Store page.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span data-i18n="footerTagline">Cue syncs your data privately through iCloud.</span>
+      <div class="footer-links">
+        <a href="Support.html" data-i18n="navSupport">Support</a>
+        <a href="Privacy.html" data-i18n="navDocsPrivacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+</body>
+</html>

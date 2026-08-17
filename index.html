@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cue automatically surfaces the right shopping list the moment you walk into a store — no searching, no switching, just buy.">
+  <title>Cue | The list that knows where you are.</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script>
+    (function() {
+      var root = document.documentElement;
+      var saved = localStorage.getItem("cue-theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. HEADER / NAV -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Cue home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="6" width="10" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="6.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="10" width="12" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="10.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="14" width="8" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="14.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <path d="M16.5 12.5 C16.5 14.9 14.5 16.9 12.1 16.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="16.5" cy="11" r="1.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>Cue</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#devices" data-i18n="navDevices">Devices</a>
+        <a href="#privacy" data-i18n="navPrivacy">Privacy</a>
+        <a href="Docs/Support.html" data-i18n="navSupport">Support</a>
+      </div>
+      <div class="nav-actions">
+        <button class="language-toggle" type="button" data-lang-toggle data-i18n="langLabel">ภาษาไทย</button>
+        <button class="icon-button" type="button" data-theme-toggle data-i18n-aria="themeLabel" aria-label="Toggle theme">
+          <!-- icon injected by JS -->
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 2. HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title" data-i18n="heroTitle">Cue</h1>
+        <p data-i18n="heroBody">The shopping list that surfaces itself. Walk into a store — Cue shows your list. Walk into another — it switches automatically. No tapping, no searching.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#download" data-i18n="heroCta">Get Cue — Free</a>
+          <a class="button secondary" href="#workflow" data-i18n="heroSecondary">See how it works</a>
+        </div>
+        <div class="price-line" data-i18n="priceLine">Free · Works entirely within Apple ecosystem</div>
+        <div class="hero-proof" aria-label="Product highlights">
+          <div class="proof-item">
+            <strong data-i18n="proofOneValue">Automatic</strong>
+            <span data-i18n="proofOneLabel">list switching</span>
+          </div>
+          <div class="proof-item">
+            <strong data-i18n="proofTwoValue">Zero</strong>
+            <span data-i18n="proofTwoLabel">third-party servers</span>
+          </div>
+          <div class="proof-item">
+            <strong data-i18n="proofThreeValue">Works on</strong>
+            <span data-i18n="proofThreeLabel">iPhone, Watch &amp; iPad</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-mockup" aria-label="Cue app preview">
+        <!-- CSS-only phone mockup with grocery list -->
+        <div class="phone-mockup" aria-hidden="true">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="list-header">
+                <span class="list-badge">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.4"/>
+                    <path d="M3 5l1.3 1.3L7 3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Active
+                </span>
+                <span class="list-name">Groceries</span>
+                <svg class="list-location-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="currentColor" opacity="0.6"/>
+                  <circle cx="12" cy="9" r="2.5" fill="white" opacity="0.9"/>
+                </svg>
+              </div>
+              <ul class="mock-list">
+                <li class="mock-item checked">
+                  <span class="mock-check done"></span>
+                  <span>Oat milk</span>
+                </li>
+                <li class="mock-item checked">
+                  <span class="mock-check done"></span>
+                  <span>Sourdough bread</span>
+                </li>
+                <li class="mock-item">
+                  <span class="mock-check"></span>
+                  <span>Cherry tomatoes</span>
+                </li>
+                <li class="mock-item">
+                  <span class="mock-check"></span>
+                  <span>Greek yogurt</span>
+                </li>
+                <li class="mock-item">
+                  <span class="mock-check"></span>
+                  <span>Sparkling water</span>
+                </li>
+              </ul>
+              <div class="mock-total">
+                <span>Running total</span>
+                <span class="mock-total-value">฿ 284</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. FEATURES GRID -->
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="section-header">
+        <h2 id="features-title" data-i18n="featuresTitle">Everything you need to shop smarter</h2>
+        <p data-i18n="featuresBody">Built around one idea — the right list should be waiting for you, not the other way around.</p>
+      </div>
+      <div class="feature-grid">
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          <h3 data-i18n="featureOneTitle">Automatic List Switching</h3>
+          <p data-i18n="featureOneBody">Walk into a store and Cue surfaces the right list instantly using geofencing. No manual switching ever.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="7" y="3" width="10" height="18" rx="3" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M9 7h6M9 10h6M9 13h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="12" cy="17.5" r="1" fill="currentColor"/>
+          </svg>
+          <h3 data-i18n="featureTwoTitle">Buy Mode on Apple Watch</h3>
+          <p data-i18n="featureTwoBody">Glance at your wrist, tap to complete items. A horizontal switcher lets you jump to any list without pulling out your phone.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+          <h3 data-i18n="featureThreeTitle">Voice Capture</h3>
+          <p data-i18n="featureThreeBody">Dictate new items directly from your Apple Watch using Voice Capture. Hands are full? Just say it.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="13" y="3" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="3" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+            <rect x="13" y="13" width="8" height="8" rx="1.5" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+          <h3 data-i18n="featureFourTitle">Home Screen Widgets</h3>
+          <p data-i18n="featureFourBody">Your active list lives on your Home Screen. One glance and you know exactly what to grab.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M12 8V6M12 18v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <h3 data-i18n="featureFiveTitle">Private iCloud Sync</h3>
+          <p data-i18n="featureFiveBody">Data syncs across iPhone and iPad through your private iCloud account. No accounts to create, no third-party servers.</p>
+        </article>
+
+        <article class="feature-card">
+          <svg class="feature-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9.5 7.5 C9.5 7.5 10 6 12 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <h3 data-i18n="featureSixTitle">Running Total</h3>
+          <p data-i18n="featureSixBody">Add estimated prices to items and Cue tallies them as you shop — so you know before you reach the checkout.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. DEVICES / PLATFORM BAND -->
+    <section class="section" id="devices" aria-labelledby="devices-title">
+      <div class="device-band">
+        <div class="section-header">
+          <h2 id="devices-title" data-i18n="devicesTitle">On every device you use</h2>
+          <p data-i18n="devicesBody">Cue lives on iPhone, iPad, Apple Watch, and your Home Screen. The same smart list, always in reach.</p>
+        </div>
+        <div class="device-triptych" aria-hidden="true">
+
+          <!-- iPhone panel -->
+          <div class="device-panel iphone-panel">
+            <div class="device-panel-label">iPhone</div>
+            <div class="dp-list-name">Groceries</div>
+            <ul class="dp-list">
+              <li><span class="dp-check"></span><span>Oat milk</span></li>
+              <li><span class="dp-check active"></span><span>Sourdough bread</span></li>
+              <li><span class="dp-check"></span><span>Cherry tomatoes</span></li>
+            </ul>
+            <div class="dp-switch-row">
+              <span class="dp-pill active">Groceries</span>
+              <span class="dp-pill">Costco</span>
+              <span class="dp-pill">Pharmacy</span>
+            </div>
+          </div>
+
+          <!-- Apple Watch panel -->
+          <div class="device-panel watch-panel">
+            <div class="device-panel-label">Apple Watch</div>
+            <div class="watch-screen">
+              <div class="watch-title">Buy Mode</div>
+              <div class="watch-item">
+                <div class="watch-ring">
+                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="14" r="11" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+                    <circle cx="14" cy="14" r="11" stroke="#16C7BE" stroke-width="3" stroke-dasharray="55 15" stroke-linecap="round" transform="rotate(-90 14 14)"/>
+                  </svg>
+                </div>
+                <span>Sparkling water</span>
+              </div>
+              <div class="watch-item">
+                <div class="watch-ring">
+                  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="14" r="11" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
+                    <circle cx="14" cy="14" r="11" stroke="#16C7BE" stroke-width="3" stroke-dasharray="69 1" stroke-linecap="round" transform="rotate(-90 14 14)"/>
+                  </svg>
+                </div>
+                <span>Greek yogurt</span>
+              </div>
+              <div class="watch-mic">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <rect x="9" y="2" width="6" height="12" rx="3" stroke="white" stroke-width="1.8"/>
+                  <path d="M5 10c0 3.87 3.13 7 7 7s7-3.13 7-7" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                  <path d="M12 17v3" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Widget panel -->
+          <div class="device-panel widget-panel">
+            <div class="device-panel-label">Widget</div>
+            <div class="widget-card">
+              <div class="widget-icon">
+                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="6" width="10" height="1.8" rx="0.9" fill="white" opacity="0.9"/>
+                  <rect x="3" y="10" width="12" height="1.8" rx="0.9" fill="white" opacity="0.9"/>
+                  <rect x="3" y="14" width="8" height="1.8" rx="0.9" fill="white" opacity="0.9"/>
+                  <circle cx="16.5" cy="11" r="1.4" fill="white"/>
+                </svg>
+              </div>
+              <div class="widget-title">Groceries</div>
+              <div class="widget-count">3 items remaining</div>
+              <div class="widget-items">
+                <span>Cherry tomatoes</span>
+                <span>Greek yogurt</span>
+                <span>Sparkling water</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS (TIMELINE) -->
+    <section class="section" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-header">
+        <h2 id="workflow-title" data-i18n="workflowTitle">From store entrance to checkout</h2>
+        <p data-i18n="workflowBody">Cue's six-tier algorithm figures out where you are and picks the best list automatically.</p>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="number">1</span>
+          <h3 data-i18n="stepOneTitle">Set up your lists</h3>
+          <p data-i18n="stepOneBody">Create a Context for each store or errand — Groceries, Costco, Pharmacy. Assign a location trigger and a colour.</p>
+        </article>
+        <article class="timeline-item">
+          <span class="number">2</span>
+          <h3 data-i18n="stepTwoTitle">Add items anytime</h3>
+          <p data-i18n="stepTwoBody">Tap + to add what you need, wherever you are. Add notes, quantities, or estimated prices.</p>
+        </article>
+        <article class="timeline-item">
+          <span class="number">3</span>
+          <h3 data-i18n="stepThreeTitle">Walk into the store</h3>
+          <p data-i18n="stepThreeBody">Cue detects your geofence and promotes the right list to the top — on your iPhone and Apple Watch.</p>
+        </article>
+        <article class="timeline-item">
+          <span class="number">4</span>
+          <h3 data-i18n="stepFourTitle">Tap to complete</h3>
+          <p data-i18n="stepFourBody">Check off items as you shop. Cue keeps a running total. Done — leave the store and the list resets for next time.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. PRIVACY / TRUST STRIP -->
+    <section class="section" id="privacy" aria-labelledby="privacy-title">
+      <div class="section-header">
+        <h2 id="privacy-title" data-i18n="privacyTitle">Your data never leaves Apple's ecosystem</h2>
+        <p data-i18n="privacyBody">No accounts. No tracking. No analytics. Cue is built on SwiftData and private CloudKit.</p>
+      </div>
+      <div class="privacy-strip">
+        <article class="privacy-item">
+          <h3 data-i18n="privacyOneTitle">Zero tracking</h3>
+          <p data-i18n="privacyOneBody">No advertising SDK. No analytics SDK. Cue's privacy manifest explicitly records zero collected data types.</p>
+        </article>
+        <article class="privacy-item">
+          <h3 data-i18n="privacyTwoTitle">Private iCloud only</h3>
+          <p data-i18n="privacyTwoBody">Sync uses your personal iCloud account via CloudKit. Cue has no servers of its own.</p>
+        </article>
+        <article class="privacy-item">
+          <h3 data-i18n="privacyThreeTitle">Local-first on Watch</h3>
+          <p data-i18n="privacyThreeBody">Your Apple Watch stores its own copy of your data locally — nothing leaves the Apple ecosystem.</p>
+        </article>
+        <article class="privacy-item">
+          <h3 data-i18n="privacyFourTitle">Your lists, your device</h3>
+          <p data-i18n="privacyFourBody">Items, locations, and preferences stay in SwiftData on your device. Delete any time with a single tap in Settings.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. DOWNLOAD / FINAL CTA -->
+    <section class="section" id="download" aria-labelledby="download-title">
+      <div class="download-band">
+        <div>
+          <h2 id="download-title" data-i18n="finalTitle">Your list, ready when you walk in the door.</h2>
+          <p data-i18n="finalBody">Cue is free and works entirely within your Apple ecosystem. Available for iPhone, iPad, and Apple Watch.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary" href="#" data-i18n="finalCta">Download on the App Store</a>
+          <a class="button secondary" href="Docs/Support.html" data-i18n="finalSupport">Read support docs</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span data-i18n="footerTagline">Cue syncs your data privately through iCloud.</span>
+      <div class="footer-links">
+        <a href="Docs/Support.html" data-i18n="navSupport">Support</a>
+        <a href="Docs/Privacy.html" data-i18n="navDocsPrivacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
+</body>
+</html>

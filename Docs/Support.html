@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cue Support — get help with your context-aware shopping list app.">
+  <title>Cue | Support</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script>
+    (function() {
+      var root = document.documentElement;
+      var saved = localStorage.getItem("cue-theme");
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      root.dataset.theme = saved || (prefersDark ? "dark" : "light");
+    })();
+  </script>
+</head>
+<body class="docs-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="../index.html" aria-label="Cue home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3" y="6" width="10" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="6.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="10" width="12" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="10.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <rect x="3" y="14" width="8" height="1.8" rx="0.9" fill="currentColor" opacity="0.9"/>
+            <circle cx="6.5" cy="14.9" r="1.1" fill="currentColor" opacity="0.5"/>
+            <path d="M16.5 12.5 C16.5 14.9 14.5 16.9 12.1 16.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+            <circle cx="16.5" cy="11" r="1.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>Cue</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#features" data-i18n="navFeatures">Features</a>
+        <a href="../index.html#devices" data-i18n="navDevices">Devices</a>
+        <a href="../index.html#privacy" data-i18n="navPrivacy">Privacy</a>
+        <a href="Support.html" data-i18n="navSupport">Support</a>
+      </div>
+      <div class="nav-actions">
+        <button class="language-toggle" type="button" data-lang-toggle data-i18n="langLabel">ภาษาไทย</button>
+        <button class="icon-button" type="button" data-theme-toggle data-i18n-aria="themeLabel" aria-label="Toggle theme"></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="docs-shell">
+    <span class="doc-meta" data-i18n="supportUpdated">Last updated: August 2026</span>
+    <h1 data-i18n="supportTitle">Cue Support</h1>
+    <p class="docs-lead" data-i18n="supportLead">Cue is a context-aware shopping list for iPhone, iPad, and Apple Watch. If you have questions or run into an issue, reach out — we're happy to help.</p>
+
+    <div class="docs-grid">
+
+      <section class="support-card" aria-labelledby="contact-title">
+        <h2 id="contact-title" data-i18n="supportContactTitle">Contact</h2>
+        <p data-i18n="supportContactBody">Email us or open a request via the App Store review page. We aim to respond within one business day.</p>
+      </section>
+
+      <section class="support-card" aria-labelledby="faq-title">
+        <h2 id="faq-title" data-i18n="supportFaqTitle">Common Help Topics</h2>
+        <ul>
+          <li data-i18n="supportFaqOne">How does automatic list switching work? — Cue monitors geofences you set on each Context. When your device enters the region, that Context becomes active and Cue surfaces it on your iPhone and Apple Watch.</li>
+          <li data-i18n="supportFaqTwo">Why does my list not switch automatically? — Make sure you've granted "Always On" location permission in Settings → Cue, and that you've set a location trigger on your Context. iOS limits apps to 20 monitored regions at a time; Cue rebalances them as you move.</li>
+          <li data-i18n="supportFaqThree">How do I add items from my Apple Watch? — Open Cue on your Watch, tap the mic icon, and dictate your item using Voice Capture. Microphone and speech recognition permissions are required.</li>
+          <li data-i18n="supportFaqFour">Can I use Cue without an iCloud account? — Yes. Cue works fully offline and on a single device. iCloud sync is optional and activates automatically when you're signed in with an Apple ID that has iCloud Drive enabled.</li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span data-i18n="footerTagline">Cue syncs your data privately through iCloud.</span>
+      <div class="footer-links">
+        <a href="Support.html" data-i18n="navSupport">Support</a>
+        <a href="Privacy.html" data-i18n="navDocsPrivacy">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/site.js"></script>
+</body>
+</html>
