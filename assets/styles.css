@@ -288,7 +288,7 @@ img {
     align-items: center;
   }
   .hero-copy { flex: 1; }
-  .hero-mockup { flex: 0 0 340px; }
+  .hero-mockup { flex: 0 0 auto; }
 }
 
 .hero-copy {
@@ -371,144 +371,43 @@ img {
   50%       { transform: translateY(-10px); }
 }
 
-/* Phone mockup (CSS-only) */
+/* Device image mockup — iPhone is the anchor, Watch overlaps bottom-left */
 .hero-mockup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-mockup {
+  position: relative;
+  display: inline-block;
+  width: 260px;
+  flex-shrink: 0;
   filter: drop-shadow(var(--shadow));
+  padding-left: 14%;   /* room for the watch that bleeds left */
 }
 
-.phone-shell {
-  width: 240px;
-  background: var(--surface);
-  border-radius: 36px;
-  border: 1.5px solid var(--border);
-  padding: 20px 16px 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.phone-notch {
-  width: 80px;
-  height: 22px;
-  background: var(--bg-strong);
-  border-radius: 0 0 14px 14px;
-  margin: 0 auto 16px;
-  position: relative;
-}
-.phone-notch::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  background: var(--border);
-  border-radius: 50%;
-}
-
-.phone-screen {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.list-header {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 4px;
-}
-
-.list-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: color-mix(in srgb, var(--accent) 15%, transparent);
-  color: var(--accent);
-  font-size: 0.65rem;
-  font-weight: 700;
-  padding: 2px 7px;
-  border-radius: 20px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-.list-name {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text);
-  flex: 1;
-}
-
-.list-location-icon {
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.mock-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.mock-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
-  color: var(--text);
-}
-
-.mock-item.checked {
-  color: var(--muted);
-}
-
-.mock-check {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 1.8px solid var(--border);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.mock-check.done {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-.mock-check.done::after {
-  content: '';
-  width: 8px;
-  height: 5px;
-  border-left: 1.8px solid #fff;
-  border-bottom: 1.8px solid #fff;
-  transform: translateY(-1px) rotate(-45deg);
+/* iPhone — fills the container width */
+.hero-iphone {
   display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  position: relative;
+  z-index: 1;
 }
 
-.mock-total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 6px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-  font-size: 0.75rem;
-  color: var(--muted);
+/* Watch — absolute, bottom-left, roughly 44% the iPhone width */
+.hero-watch {
+  position: absolute;
+  width: 44%;
+  height: auto;
+  bottom: 0;
+  left: -14%;          /* bleeds slightly past the left edge */
+  z-index: 2;
+  border-radius: 18px;
 }
 
-.mock-total-value {
-  font-weight: 700;
-  color: var(--orange);
+@media (min-width: 768px) {
+  .hero-mockup { width: 300px; }
+}
+
+@media (min-width: 1024px) {
+  .hero-mockup { width: 340px; }
 }
 
 /* ------------------------------------------------------------
